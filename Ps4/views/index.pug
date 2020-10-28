@@ -2,4 +2,9 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+
+  <form action = "http://localhost:3000/ps4" method="POST">
+    <label for="CountryName">Country:</label>
+    <input type = "text" id = "CountryName" name = "CountryName">
+    <input type = "submit" value = "Search">
+  </form>
