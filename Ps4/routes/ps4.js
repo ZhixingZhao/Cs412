@@ -16,7 +16,7 @@ router.post('/', (req, res, next) => {
     let CountryName = req.body.CountryName
     let CountryCode = Convert.getCountryCode(CountryName)
     getData(CountryCode).then(data => {
-        console.log(data.data)
+//        console.log(data.data)
         res.render('CovidDataRender', data.data)
 
     });
