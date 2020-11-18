@@ -1,8 +1,10 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const router = express.Router();
-const fetchoption = require('../Config/config')
+const fetchoption = require('../Config/config');
 const Convert = require('../ConvertFunction');
+const redis = require('redis');
+const client = redis.createClient();
 
 
 
