@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
-import { GetCountryDataComponent } from './get-country-data/get-country-data.component';
+import { GetCountryDataComponent } from './DisplayData/get-country-data.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GetCountryDataComponent
+    GetCountryDataComponent,
   ],
   imports: [
     BrowserModule,

@@ -9,8 +9,8 @@ export class GetCovidDataByCountryService {
 
   constructor(private BackendClient: HttpClient) { }
 
-  getCountryData(): Observable<any> {
-    return this.BackendClient.get('http://localhost:3000/ps4',
+  getCountryData(CountryName): Observable<any> {
+    return this.BackendClient.get('http://localhost:3000/ps4?CountryName=' + CountryName,
       {observe: 'body', responseType: 'json'});
   }
 }

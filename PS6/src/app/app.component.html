@@ -1,17 +1,17 @@
 <h1>{{title}}</h1>
+
 <div>
 Country: <input type="text" #countrynameinput>
-  <button (click)="getCountryName(countrynameinput)">search</button>
+  <button (click)="getCountryName(countrynameinput);getCountryData()">search</button>
 </div>
+<!--<form action = "http://localhost:3000/ps4" method="get">-->
+<!--  <label for="CountryName">Country:</label>-->
+<!--  <input type = "text" id = "CountryName" name = "CountryName">-->
+<!--  <input type = "submit" value = "Search">-->
+<!--</form>-->
+
+<app-get-country-data [CountryDataByTime]="CountryDataByTime" [isEmpty]="isEmpty"></app-get-country-data>
 
 
-  <div *ngIf="!isEmpty">
-
-    <app-get-country-data></app-get-country-data>
-  </div>
-
-<!--  <div *ngIf="!CheckIfIsUs()&&!isEmpty">-->
-<!--    Sorry, Covid-19 data for this country is currently not available.-->
-<!--  </div>-->
 
 

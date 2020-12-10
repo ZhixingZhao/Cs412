@@ -1,8 +1,6 @@
 <h1>{{CountryName}}</h1>
 
-<button (click)="getCountryData()">Show Data</button>
-
-
+<div *ngIf="!(CountryDataByTime==undefined)">
   <ul *ngFor="let Date of CountryDataByTime">
     <li (click)="setSelectedDate(Date)">{{Date.date}}</li>
   </ul>
@@ -12,10 +10,10 @@
     Active Cases: {{SelectedDate.active}} <br>
     Deaths: {{SelectedDate.deaths}} <br>
   </div>
+</div>
 
-
-<!--<div *ngIf="!CheckIfIsUs()&&!isEmpty">-->
-<!--  Sorry, Covid-19 data for this country is currently not available.-->
-<!--</div>-->
+<div *ngIf="CountryDataByTime==undefined&&!isEmpty">
+  Sorry, Covid-19 data for this country is currently not available.
+</div>
 
 

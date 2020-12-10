@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { USCoviddata } from './Data/UnitedStates';
 import { CovidDataByTime } from './Data/datatype';
-import { CommonModule } from '@angular/common';
+import { GetCovidDataByCountryService } from './Services/get-covid-data-by-country.service';
+
+interface CountryData {
+  name: string;
+  timeline: [];
+}
 
 @Component({
   selector: 'app-root',
@@ -11,23 +16,25 @@ import { CommonModule } from '@angular/common';
 export class AppComponent implements OnInit{
   title = 'Covid-19 Data';
   CountryName: string;
-  UsData: CovidDataByTime[] = USCoviddata;
+  CountryDataByTime: CovidDataByTime[];
   SelectedDate: CovidDataByTime;
   isEmpty = true;
 
   ngOnInit(): void {
   }
+  constructor(private CountryDataService: GetCovidDataByCountryService) { }
 
   setSelectedDate(Date: CovidDataByTime): void {
     this.SelectedDate = Date;
   }
 
-  CheckIfIsUs(): boolean {
-    if (this.CountryName === 'United States'){
-      return true;
-    }else{
-      return false;
-    }
+  getCountryData(): void{
+    this.CountryDataService.getCountryData(this.CountryName).subscribe(
+      (response: CountryData) => {
+        this.CountryName = response.name;
+        this.CountryDataByTime = response.timeline.slice(1);
+      }
+    );
   }
   IsEmpty(): boolean {
     return this.isEmpty;
