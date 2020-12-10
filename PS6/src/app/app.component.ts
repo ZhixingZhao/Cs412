@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { USCoviddata } from './Data/UnitedStates';
-import { CovidDataByTime} from './Data/datatype';
+import { CovidDataByTime } from './Data/datatype';
 import { CommonModule } from '@angular/common';
 
 @Component({

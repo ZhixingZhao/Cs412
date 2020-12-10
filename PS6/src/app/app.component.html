@@ -5,23 +5,13 @@ Country: <input type="text" #countrynameinput>
 </div>
 
 
-  <div *ngIf="CheckIfIsUs()&&!isEmpty">
+  <div *ngIf="!isEmpty">
 
-  <ul *ngFor="let Date of UsData">
-  <li (click)="setSelectedDate(Date)">{{Date.date}}</li>
-  </ul>
-
-    <div style="position: fixed; top: 35%; right: 0;">
-      Confirmed Cases: {{SelectedDate.confirmed}} <br>
-      Active Cases: {{SelectedDate.active}} <br>
-      Deaths: {{SelectedDate.deaths}} <br>
-    </div>
-
-
+    <app-get-country-data></app-get-country-data>
   </div>
 
-  <div *ngIf="!CheckIfIsUs()&&!isEmpty">
-    Sorry, Covid-19 data for this country is currently not available.
-  </div>
+<!--  <div *ngIf="!CheckIfIsUs()&&!isEmpty">-->
+<!--    Sorry, Covid-19 data for this country is currently not available.-->
+<!--  </div>-->
 
 
