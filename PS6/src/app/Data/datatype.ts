@@ -1,4 +1,4 @@
-export class CovidData {
+export class CovidDataByTime {
   // tslint:disable-next-line:variable-name
   updated_at: string;
   date: string;

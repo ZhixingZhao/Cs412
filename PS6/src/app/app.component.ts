@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { USCoviddata } from './Data/UnitedStates';
-import { CovidData } from './Data/datatype';
+import { CovidDataByTime} from './Data/datatype';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -11,14 +11,14 @@ import { CommonModule } from '@angular/common';
 export class AppComponent implements OnInit{
   title = 'Covid-19 Data';
   CountryName: string;
-  UsData: CovidData[] = USCoviddata;
-  SelectedDate: CovidData;
+  UsData: CovidDataByTime[] = USCoviddata;
+  SelectedDate: CovidDataByTime;
   isEmpty = true;
 
   ngOnInit(): void {
   }
 
-  setSelectedDate(Date: CovidData): void {
+  setSelectedDate(Date: CovidDataByTime): void {
     this.SelectedDate = Date;
   }
 

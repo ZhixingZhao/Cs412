@@ -1,6 +1,6 @@
-import {CovidData} from './datatype';
+import {CovidDataByTime} from './datatype';
 
-export const USCoviddata: CovidData[] = [
+export const USCoviddata: CovidDataByTime[] = [
   {
     updated_at: '2020-11-30T04:26:18.000Z',
     date: '2020-11-30',
