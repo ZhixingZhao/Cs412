@@ -15,6 +15,7 @@ interface CountryData {
 export class GetCountryDataComponent implements OnInit {
   @Input() CountryDataByTime: CovidDataByTime[];
   @Input() isEmpty: boolean;
+  @Input() Cashed: boolean;
   CountryName: string;
   SelectedDate: CovidDataByTime;
 

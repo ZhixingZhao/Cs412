@@ -1,6 +1,7 @@
 <h1>{{CountryName}}</h1>
 
 <div *ngIf="!(CountryDataByTime==undefined)">
+  Cashed:{{Cashed}}
   <ul *ngFor="let Date of CountryDataByTime">
     <li (click)="setSelectedDate(Date)">{{Date.date}}</li>
   </ul>

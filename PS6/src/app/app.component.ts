@@ -5,6 +5,7 @@ import { GetCovidDataByCountryService } from './Services/get-covid-data-by-count
 
 interface CountryData {
   name: string;
+  cashed: boolean;
   timeline: [];
 }
 
@@ -18,6 +19,7 @@ export class AppComponent implements OnInit{
   CountryName: string;
   CountryDataByTime: CovidDataByTime[];
   SelectedDate: CovidDataByTime;
+  Cashed: boolean;
   isEmpty = true;
 
   ngOnInit(): void {
@@ -33,6 +35,7 @@ export class AppComponent implements OnInit{
       (response: CountryData) => {
         this.CountryName = response.name;
         this.CountryDataByTime = response.timeline.slice(1);
+        this.Cashed = response.cashed;
       }
     );
   }
